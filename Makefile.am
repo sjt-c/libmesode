@@ -39,6 +39,7 @@ libmesode_la_SOURCES = \
 	src/sha1.c \
 	src/snprintf.c \
 	src/sock.c \
+	src/socks5.c \
 	src/stanza.c \
 	src/util.c \
 	src/uuid.c
@@ -55,6 +56,7 @@ libmesode_la_SOURCES += \
 	src/sha1.h \
 	src/snprintf.h \
 	src/sock.h \
+	src/socks5.h \
 	src/tls.h \
 	src/util.h
 

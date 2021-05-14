@@ -29,6 +29,8 @@
 #include "sock.h"
 #include "snprintf.h"
 
+#include "socks5.h"
+
 int sock_error(void)
 {
     return errno;
@@ -45,6 +47,9 @@ sock_t sock_connect(const char * const host, const unsigned short port)
     char service[6];
     struct addrinfo *res, *ainfo, hints;
     int err;
+
+	if (socks5_check())
+		return socks5_connect(host, port);
 
     xmpp_snprintf(service, 6, "%u", port);
 

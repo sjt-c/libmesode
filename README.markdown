@@ -1,3 +1,49 @@
+# libmesode + SOCKS5/TOR
+
+This code is a fork of libmesode (https://github.com/profanity-im/libmesode/) that adds support for SOCKS5/TOR.
+
+Changes
+---
+
+The following files have been edited:
+
+- Makefile.am
+- README.markdown
+- src/sock.c
+
+The following files have been added:
+
+- src/socks5.c
+- src/socks5.h
+
+Installation
+---
+
+Follow the standard libmesode installation proccess at the end of this file.
+
+Usage
+---
+
+To connect through a SOCKS5/TOR proxy define the environment
+variable `SOCKS_PROXY` to be the IPv4 address and port number
+of the proxy as a single string seperated by a colon.
+
+For a bourne-style shell:
+
+    $ export SOCKS_PROXY="10.1.2.3:1080"
+	
+For a C shell:
+
+	% setenv SOCKS_PROXY "10.1.2.3:1080"
+	
+Notes
+---
+
+The environment variable is parsed silently.  If it is not found, or fails to
+parse correctly, it will be ignored and the original behaviour of libmesode will occur.
+
+---
+
 # libmesode
 
 libmesode is a fork of libstrophe (http://strophe.im/libstrophe/) for use in Profanity (http://www.profanity.im/).
